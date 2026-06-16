@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Affaire Lyhanna · 系统综述 · 6月4日–15日</title>
+<style>
+/* ===== 朴素纯内容版：仅排版,不套任何报刊报头/配色。模板留待后续套用 ===== */
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+:root{
+  --ink:#1a1a1a; --ink-soft:#3b3b3b; --grey:#777; --grey-line:#dcdcdc;
+  --fr:#33485f;            /* 法文行的稍冷色 */
+  --bg-q:#f5f7f9;          /* 引语/侧栏浅底 */
+  --rule:#c9c9c9;
+  --serif:"Times New Roman",Times,"Songti SC","STSong","Source Han Serif SC",serif;
+  --sans:Arial,Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+}
+body{
+  font-family:var(--sans);font-size:16px;line-height:1.75;color:var(--ink);
+  background:#fff;max-width:820px;margin:0 auto;padding:0 22px 90px;
+  line-break:strict;word-break:normal;overflow-wrap:break-word;hanging-punctuation:allow-end;
+}
+em,em.fr{font-style:italic;word-break:keep-all;}
+
+/* 顶部 */
+.masthead{padding:30px 0 6px;border-bottom:2px solid var(--ink);}
+.kicker{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--grey);font-weight:700;}
+h1.page{font-family:var(--serif);font-size:33px;font-weight:900;line-height:1.18;letter-spacing:-.3px;margin:8px 0 6px;}
+.page-fr{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--grey);line-height:1.4;margin-bottom:12px;}
+.meta{font-size:12.5px;color:var(--grey);line-height:1.6;padding:8px 0 0;}
+.claude{font-family:var(--serif);font-style:italic;font-size:11.5px;color:var(--grey);margin:10px 0 0;}
+
+/* 方法说明条 */
+.note-method{background:var(--bg-q);border-left:3px solid var(--grey-line);padding:13px 16px;margin:20px 0 8px;
+  font-size:13px;color:var(--ink-soft);line-height:1.7;}
+.note-method b{color:var(--ink);}
+
+/* 目录 */
+.toc{border:1px solid var(--grey-line);border-radius:4px;padding:16px 20px;margin:22px 0 10px;}
+.toc h2{font-family:var(--serif);font-size:15px;letter-spacing:1px;text-transform:uppercase;color:var(--grey);margin-bottom:10px;font-weight:700;}
+.toc ol{list-style:none;counter-reset:t;}
+.toc li{counter-increment:t;padding:5px 0;border-bottom:1px dotted var(--grey-line);}
+.toc li:last-child{border-bottom:none;}
+.toc li a{text-decoration:none;color:var(--ink);font-size:15px;display:block;}
+.toc li a::before{content:counter(t,decimal-leading-zero);color:var(--grey);font-family:var(--serif);font-style:italic;margin-right:12px;}
+.toc li a:hover{color:var(--fr);}
+.toc .sub{display:block;font-size:12px;color:var(--grey);margin-left:34px;margin-top:1px;}
+
+/* 区块标题 */
+section{margin-top:46px;padding-top:8px;scroll-margin-top:14px;}
+.sec-num{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--grey);}
+h2.sec{font-family:var(--serif);font-size:25px;font-weight:900;line-height:1.25;margin:2px 0 4px;border-bottom:2px solid var(--ink);padding-bottom:9px;}
+h2.sec .fr{display:block;font-size:14px;font-weight:400;font-style:italic;color:var(--grey);margin-top:4px;letter-spacing:.3px;}
+h3.intertitre{font-family:var(--serif);font-size:19px;font-weight:700;margin:26px 0 8px;color:var(--ink);}
+h3.intertitre .fr{font-size:13px;font-weight:400;font-style:italic;color:var(--grey);margin-left:6px;}
+p{margin:11px 0;font-size:15.5px;}
+p .fr-inline{color:var(--fr);font-style:italic;}
+
+/* 双语对照：中左 法右(宽屏);窄屏堆叠 */
+.bi{display:grid;grid-template-columns:1fr 1fr;gap:0 26px;margin:14px 0;border-top:1px solid var(--grey-line);}
+.bi > div{padding:12px 0;}
+.bi .zh{border-right:1px solid var(--grey-line);padding-right:24px;font-size:15px;line-height:1.75;}
+.bi .frcol{font-size:13.5px;line-height:1.7;color:var(--fr);}
+.bi .frcol em,.bi .frcol{font-style:normal;}
+.bi-label{display:block;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--grey);margin-bottom:5px;font-weight:700;}
+
+/* 引语块：中—法对照 */
+blockquote.lead{background:var(--bg-q);border-left:4px solid var(--ink);padding:14px 18px;margin:16px 0;}
+blockquote.lead .q-zh{font-family:var(--serif);font-size:16px;color:var(--ink);line-height:1.6;}
+blockquote.lead .q-fr{font-family:var(--serif);font-style:italic;font-size:13.5px;color:var(--fr);line-height:1.55;margin-top:8px;padding-top:8px;border-top:1px dashed var(--grey-line);}
+blockquote.lead .q-src{font-size:12px;color:var(--grey);margin-top:7px;}
+
+/* 段中小法语引语 */
+.quote-fr{background:var(--bg-q);color:var(--fr);font-style:italic;padding:1px 6px;border-radius:2px;}
+
+/* 侧栏 / 数据卡 */
+.card{background:var(--bg-q);border-top:3px solid var(--ink);padding:14px 18px;margin:18px 0;}
+.card .c-label{font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--grey);font-weight:700;margin-bottom:6px;}
+.card ul{list-style:none;}
+.card li{padding:4px 0;font-size:14px;border-bottom:1px dotted var(--grey-line);}
+.card li:last-child{border-bottom:none;}
+.card li b{color:var(--ink);}
+
+/* 候选人/各党表 */
+.party{margin:16px 0;}
+.party .p-head{font-family:var(--serif);font-size:17px;font-weight:700;color:var(--ink);}
+.party .p-tag{font-size:11px;letter-spacing:.5px;color:var(--grey);font-style:italic;margin-left:6px;}
+.party .p-body{font-size:14.5px;line-height:1.7;margin:4px 0 2px;padding-left:14px;border-left:2px solid var(--grey-line);}
+
+/* 时间线 */
+.tl{margin:14px 0;border-left:2px solid var(--ink);padding-left:0;}
+.tl .row{display:grid;grid-template-columns:92px 1fr;gap:0 16px;padding:9px 0 9px 16px;border-bottom:1px dotted var(--grey-line);position:relative;}
+.tl .row::before{content:"";position:absolute;left:-5px;top:15px;width:8px;height:8px;border-radius:50%;background:var(--ink);}
+.tl .row:last-child{border-bottom:none;}
+.tl .d{font-family:var(--serif);font-weight:700;font-size:13.5px;color:var(--ink);}
+.tl .e{font-size:14px;line-height:1.65;}
+.tl .e .fr-inline{color:var(--fr);font-style:italic;}
+
+hr.soft{border:none;border-top:1px solid var(--grey-line);margin:20px 0;}
+
+/* 版权 */
+.copyright{margin-top:54px;border-top:2px solid var(--ink);padding-top:18px;font-size:12px;color:var(--grey);line-height:1.7;}
+.copyright .block-zh p,.copyright .block-fr p{margin:3px 0;}
+.copyright em{font-style:italic;}
+.copyright .sep-line{border:none;border-top:1px solid var(--grey-line);margin:12px 0;width:60px;}
+.copyright .footer-claude{font-family:var(--serif);font-style:italic;margin-top:12px;color:var(--grey);}
+
+.totop{position:fixed;right:18px;bottom:18px;width:40px;height:40px;background:var(--ink);color:#fff;border-radius:50%;
+  display:none;align-items:center;justify-content:center;text-decoration:none;font-size:19px;z-index:50;box-shadow:0 2px 8px rgba(0,0,0,.2);}
+.totop.visible{display:flex;}
+
+/* ===== 可点击注释系统 ===== */
+.sticky-ctrl{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid var(--grey-line);
+  padding:10px 0;display:flex;justify-content:flex-end;align-items:center;gap:12px;margin:0 0 4px;}
+.notes-toggle{background:#fff;border:1px solid var(--grey-line);border-radius:4px;padding:6px 14px;
+  font-size:12.5px;color:var(--ink-soft);cursor:pointer;font-family:Arial,sans-serif;
+  display:inline-flex;align-items:center;gap:6px;transition:background .15s;}
+.notes-toggle:hover{background:var(--bg-q);border-color:var(--fr);color:var(--fr);}
+.notes-toggle svg{width:14px;height:14px;}
+.annot{border-bottom:1px dashed var(--fr);cursor:pointer;position:relative;}
+.annot sup{color:var(--fr);font-size:12px;font-weight:700;margin-left:1px;white-space:nowrap;}
+.annot-text{display:none;background:#fff8e1;border-left:3px solid #c7842f;padding:12px 16px;margin:10px 0;
+  font-size:13px;line-height:1.65;color:var(--ink-soft);}
+.annot-text strong{color:var(--ink);}
+.notes-open .annot-text{display:block;}
+.annot-text.open{display:block;}
+.src-link{color:inherit;text-decoration:underline;text-decoration-color:var(--rule);text-underline-offset:2px;}
+.src-link:hover{text-decoration-color:var(--fr);color:var(--fr);}
+
+@media (max-width:680px){
+  h1.page{font-size:26px;}
+  h2.sec{font-size:21px;}
+  .bi{grid-template-columns:1fr;gap:0;}
+  .bi .zh{border-right:none;border-bottom:1px solid var(--grey-line);padding-right:0;padding-bottom:10px;}
+  .tl .row{grid-template-columns:78px 1fr;}
+}
+</style>
+</head>
+<body>
+
+<div class="sticky-ctrl">
+  <button class="notes-toggle" id="notesToggle">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+    </svg>
+    <span id="notesBtnLabel">Notes</span>
+  </button>
+</div>
+
+<div class="masthead">
+  <div class="kicker">多源综述 · Synthèse</div>
+  <h1 class="page">Lyhanna 案：一桩命案如何撼动法国的司法、政府与 2027 大选</h1>
+  <div class="page-fr">案件背景 / 各党 / 政府 / 2027 候选人 / 评论员 / 时间线</div>
+  <div class="meta">时间跨度 2026 年 6 月 4 日至 6 月 15 日 · 据三类来源整合：《<em>Le Parisien</em>⁠》与《<em>Le Figaro</em>⁠》的相关报道，以及国民议会官方文件（会议记录、议员提案）<br>
+  报刊出处：《<em>Le Parisien</em>⁠》（6/4–6/14，N° 25436–25444 bis）与《<em>Le Figaro</em>⁠》（6/6、6/8、6/9、6/11、6/13、6/15 各期相关版面）；议会发言出处见各条标注。</div>
+  <p class="claude">Claude [Anthropic] 译·整理</p>
+</div>
+
+<div class="note-method">
+  <b>关于这份综述</b>　本页把两份报刊对同一事件的报道，按「背景 → 各党 → 政府 → 候选人 → 评论员 → 时间线」六个维度整合。涉及刑事侦查细节，以两报已刊载者为限；本案侦查失职的总督察报告原定 6 月 19 日公布，不在本综述时段内。
+</div>
+
+<nav class="toc">
+  <h2>目录 · Sommaire</h2>
+  <ol>
+    <li><a href="#bg">案件背景与司法链条<span class="sub">Le naufrage judiciaire — 时间、人物、九个月的怠惰</span></a></li>
+    <li><a href="#partis">各党与议会反应<span class="sub">De LFI au RN — 国民议会与党派立场</span></a></li>
+    <li><a href="#gouv">政府与部门回应<span class="sub">Lecornu · Darmanin · Nuñez · Macron</span></a></li>
+    <li><a href="#2027">2027 候选人如何用此议题叙事<span class="sub">Philippe · Attal · Retailleau · Le Pen · Mélenchon</span></a></li>
+    <li><a href="#commentateurs">评论员如何评价<span class="sub">Thréard · Tabard · Elkrief · Schoettl · 各社论</span></a></li>
+    <li><a href="#timeline">时间线<span class="sub">Chronologie — 6/4 至 6/15</span></a></li>
+  </ol>
+</nav>
+
+<!-- ============ 1. 背景 ============ -->
+<section id="bg">
+  <div class="sec-num">— 01 —</div>
+  <h2 class="sec">案件背景与司法链条<span class="fr">L'affaire et le « naufrage judiciaire »</span></h2>
+
+  <p><em>Lyhanna</em>，11 岁，<em>Gers</em><span class="annot" data-pop="t-gers"><sup>*</sup></span><div class="annot-text" id="t-gers"><strong>Gers</strong>：热尔省，位于法国西南 <em>Occitanie</em> 大区，省会 <em>Auch</em>。</div> <em>Fleurance</em> 市 <em>Hubert-Reeves</em> 中学 <em>6e</em><span class="annot" data-pop="t-6e"><sup>*</sup></span><div class="annot-text" id="t-6e"><strong>classe de 6<sup>e</sup></strong>：法国初中（collège）第一年，对应中国「初中一年级」，学生通常 11 岁。法国学制年级倒数：6e→5e→4e→3e。</div> 年级学生。<strong>2026 年 5 月 29 日（周五）</strong>15 时放学后失踪；监控显示她离校数分钟后登上 <em>Jérôme Barella</em><span class="annot" data-pop="t-barella"><sup>*</sup></span><div class="annot-text" id="t-barella"><strong>Jérôme Barella</strong>：嫌疑人，41 岁，前农业临时工，是 <em>Lyhanna</em> 一位同学之父。案发初期媒体依无罪推定惯例称其 <em>Jérôme B.</em>，立案后公开全名。</div> 的灰色轿车。<em>Toulouse</em> 宪兵搜查处在失踪数小时内将其拘留。经六天搜寻，<strong>6 月 4 日（周四）</strong>宪兵在 <em>Barella</em> 熟悉的 <em>Puycasquier</em> 一座废弃谷仓内发现遗体，<strong>6 月 5 日</strong> <em>Agen</em> 检察官经 DNA 比对确认即为 <em>Lyhanna</em>。<em>Barella</em> 以「绑架与非法拘禁」<span class="annot" data-pop="t-sequestration"><sup>*</sup></span><div class="annot-text" id="t-sequestration"><strong>enlèvement et séquestration</strong>：法国刑法上的「绑架与非法拘禁」罪名。这是立案羁押时的初始罪名，并不排除后续追加更重指控。</div> 被立案羁押，始终否认涉案。<strong>6 月 12 日</strong> <em>Lyhanna</em> 在 <em>Fleurance</em> 下葬。</p>
+
+  <h3 class="intertitre">九个月的怠惰<span class="fr">— neuf mois d'inertie</span></h3>
+  <p>全案的核心争议不在凶手，而在一条本可阻止悲剧的司法链条为何空转。<em>Barella</em> 早有多起涉未成年性侵记录<span class="annot" data-pop="fichiers">司法档案盲区<sup>*</sup></span><div class="annot-text" id="fichiers"><strong>为何前科没被发现 · FIJAISV / TAJ / Cassiopée</strong>：<em>Barella</em> 立案前不在 <strong>FIJAISV</strong>（性侵与暴力犯罪者自动档案）里——按规则，仅被立案审查或定罪者才登记，撤案（classé sans suite）不留痕，而他 2017、2022 两案均被撤。<strong>TAJ</strong>（前科处理库）也无法显示「同一人有几宗在办申诉」。唯一可能并案预警的是 <strong>Cassiopée</strong> 司法软件：<em>Auch</em> 检察院本可借此查到他两宗撤案前科、提高对 2025 年 8 月新强奸申诉的警觉；但宪兵未必有直接权限访问。这正是「谁知道、何时知道」之问的技术核心，也是司法/内政两部总督察（定于 6 月 19 日出结论）要回答的。</div>：2017 年（与一名 17 岁少女的关系，因「自愿」与年龄两月后不予立案）、2022 年（<em>Béthune</em> 立案，指控 2020 年对一名 7 岁女童施暴，2024 年 5 月以「罪行未充分构成」不予立案）。最关键的是 <strong>2025 年 8 月</strong>，化名 <em>Rosa</em>（约 11 岁）之母 <em>Audrey</em> 就强奸提起的申诉——有医学证据、心理鉴定佐证陈述可信、嫌疑人身份明确。</p>
+
+  <p>《<em>Le Figaro</em>⁠》还原了这条「沉船」般的程序：因 <em>Toulouse</em> 与 <em>Auch</em> 检察院的属地移交，整卷竟以<strong>邮寄</strong>方式寄出，不足 100 公里走了 <strong>13 天</strong>且无任何邮件或电话跟进；到 <em>Auch</em> 后又花约一个月登记、再过数周才指定法官、又数周才交给全省最小的 <em>Lectoure</em> 宪兵队。此时已是 2026 年 1 月。<strong>2 月 14 日</strong>，<em>Auch</em> 检察院据称已要求将 <em>Barella</em> 拘留，但此后「再无任何动作」，直至 5 月底命案。</p>
+
+  <blockquote class="lead">
+    <div class="q-zh">「不能说这个宪兵队忙不过来……因为除了 <em>Barella</em> 这宗，他们手上的刑事案卷库存是空的。」／「这份案卷被当成寻常案件之一来处理」——而 2025 年的刑事政策通令本要求「优先」处理侵害未成年人的案件。</div>
+    <div class="q-fr">«&nbsp;On ne peut pas dire que les gendarmes de cette brigade étaient débordés … puisque le stock de dossiers criminels était vide à part celui concernant Jérôme Barella.&nbsp;» / «&nbsp;Le dossier a été traité comme une affaire parmi d'autres&nbsp;» — alors que la circulaire de politique pénale de 2025 exigeait de «&nbsp;prioriser&nbsp;» les atteintes aux mineurs.</div>
+    <div class="q-src">— 近案消息源 / 司法部 ·《<em>Le Figaro</em>⁠》6/6 · P. 2</div>
+  </blockquote>
+
+  <p>司法部强调这「不是物质困难，而是不遵守本已清晰的部级指令」。一位近案人士据此驳斥「缺乏经费」之说——<em>Auch</em> 法院并未被案卷压垮。而 <em>Rosa</em> 之母 <em>Audrey</em> 称，她「每周一早晨」都打电话向 <em>Fleurance</em>、<em>Lectoure</em>、<em>Auch</em> 三处宪兵队问进展，最终竟被威胁以「骚扰」论处。</p>
+
+  <blockquote class="lead">
+    <div class="q-zh">「我有没能保护好女儿的愧疚……司法没有尽职，因为 <em>Jérôme Barella</em> 既没被问讯、也没被传唤。」</div>
+    <div class="q-fr">«&nbsp;J'ai la culpabilité de ne pas avoir su protéger ma fille… La justice n'a pas fait son travail puisque Jérôme Barella n'a été ni entendu, ni convoqué.&nbsp;»</div>
+    <div class="q-src">— <em>Audrey</em>，<em>Rosa</em> 之母（化名）·《<em>Le Parisien</em>⁠》6/10 · P. 6</div>
+  </blockquote>
+
+  <p>调查逐步揭出 <em>Barella</em> 家的「代际暴力」：其弟 <em>Yannick</em> 就两名前伴侣被控强奸而立案，其父 <em>Joël</em> 被继女的两名孙女 <em>Prescyllia</em>、<em>Maeva</em> 指控性侵，<em>Béziers</em> 检察院重启旧案。专栏作者 <em>Ruth Elkrief</em> 概括为「先是儿子，然后是兄弟，再是父亲」<span class="annot" data-pop="t-apresfils"><sup>*</sup></span><div class="annot-text" id="t-apresfils"><strong>«&nbsp;Après le fils, le frère et maintenant le père&nbsp;»</strong>：法语原文（《<em>Le Parisien</em>》6/12）。</div>。逮捕后，调查人员在 <em>Barella</em> 手机里发现大量与未成年少女的往来——若 2 月 14 日后即逮捕，这些恐在命案数月前就被发现。</p>
+
+  <div class="card">
+    <div class="c-label">几个反复出现的数字 · Les chiffres</div>
+    <ul>
+      <li>每年约 <b>16 万名</b>未成年人遭受性暴力 <span class="annot" data-pop="ciivise"><em>Ciivise</em><sup>*</sup></span><div class="annot-text" id="ciivise"><strong>Ciivise · Commission indépendante sur l'inceste et les violences sexuelles faites aux enfants</strong>：乱伦与儿童性暴力独立委员会。2021 年 1 月由 <em>Macron</em> 在 #MeTooInceste 运动后设立，初期由法官 <em>Édouard Durand</em> 与 <em>Nathalie Mathieu</em> 共同主持，三年间收集约 3 万份证词，2023 年 11 月提出 <b>82 条</b>政策建议。2024 年改组、更换领导班子；2026 年 1 月 <em>Face à l'inceste</em> 协会退出，指其他成员阻挠乱伦罪不可时效化的立法。</div>；每小时约 <b>4 起</b>报案。</li>
+      <li>约 <b>73%</b> 涉未成年性暴力的报案被「不予立案」（<em>classement sans suite</em> · source : <em>France Victimes</em>）。</li>
+      <li>登记在案的性暴力受害人数十年间增至约 2.6 倍（2016 年约 5.2 万 → 2025 年约 13.2 万，约 +156%；内政部数据）。</li>
+      <li>性暴力案约 86% 被不予立案，强奸报案仅约 10–15% 最终定罪（官方统计因口径而异；维权方常引「仅约 1% 强奸者被定罪」一说，但该比值因分子分母不可比而存争议）。</li>
+      <li>警局与宪兵队积压约 <b>290 万</b>份待处理报案，其中约 <b>7 万</b>宗涉未成年（source : <em>Darmanin</em>）。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 2. 各党 ============ -->
+<section id="partis">
+  <div class="sec-num">— 02 —</div>
+  <h2 class="sec">各党与议会反应<span class="fr">Les partis et l'Assemblée nationale</span></h2>
+
+  <p>本案在国民议会的三场会议被讨论。下文院内发言出自国民议会会议记录（assemblee-nationale.fr，可点日期查看），院外言论标注《<em>Le Parisien</em>⁠》或《<em>Le Figaro</em>⁠》。各党的分歧不在哀悼，而在如何定性、向谁问责、用什么手段。</p>
+
+  <div class="tl" style="margin:14px 0 22px;">
+    <div class="row"><div class="d"><a class="src-link" href="https://www.assemblee-nationale.fr/dyn/17/comptes-rendus/seance/session-ordinaire-de-2025-2026/premiere-seance-du-mercredi-03-juin-2026" target="_blank" rel="noopener">6 月 3 日</a></div><div class="e">质询，<em>Lyhanna</em> 仍失踪。</div></div>
+    <div class="row"><div class="d"><a class="src-link" href="https://www.assemblee-nationale.fr/dyn/17/comptes-rendus/seance/session-ordinaire-de-2025-2026/premiere-seance-du-mardi-09-juin-2026" target="_blank" rel="noopener">6 月 9 日</a></div><div class="e">致敬＋质询；当天 17 个质询中 12 个直接问及 <em>Lyhanna</em> 或司法系统。</div></div>
+    <div class="row"><div class="d"><a class="src-link" href="https://www.assemblee-nationale.fr/dyn/17/comptes-rendus/seance/session-ordinaire-de-2025-2026/seance-du-mercredi-10-juin-2026" target="_blank" rel="noopener">6 月 10 日</a></div><div class="e">质询当天主要悼念 <em>Noahm</em>，另有「报案处理」「受害者保护」两问。</div></div>
+  </div>
+
+  <div class="card" style="border-top-color:var(--grey);">
+    <div class="c-label">质询本身没有表决 · Pas de vote</div>
+    <div style="font-size:14px;line-height:1.7;">政府质询<span class="annot" data-pop="t-qag"><sup>*</sup></span><div class="annot-text" id="t-qag"><strong>questions au gouvernement（QAG）</strong>：法国国民议会的政府质询，是议员对内阁的口头答辩环节，程序上不产生表决。</div>是口头答辩，程序上不产生表决——<em>Lyhanna</em> 议题始终停留在质询与口头表态层面，未进入任何投票。当天会议<strong>另有</strong>与本案无关的表决：6 月 9 日下午议会在质询后以「先决驳回动议」<span class="annot" data-pop="t-motion"><sup>*</sup></span><div class="annot-text" id="t-motion"><strong>motion de rejet préalable</strong>：「先决驳回动议」，一种在实质辩论前整体否决某法案文本的程序性表决。</div><strong>否决</strong>了 2025 年度《国家账目》与《社保账目》两项决算批准法案。左翼正借质询追问：为何连一部完整法案都排不进议程，只能口头应允。</div>
+  </div>
+
+  <h3 class="intertitre">6 月 9 日开场：议长的致敬<span class="fr">— l'hommage de la présidente</span></h3>
+  <p>会议由议长 <em>Yaël Braun-Pivet</em> 主持，为三人默哀：殉职宪兵 <em>adjudant Larigaudrie</em>（27 岁，搜救时直升机失事）、<em>Lyhanna</em>（11 岁）、在 <em>Metz</em> 被「私刑」打死的 <em>Noahm</em>（19 岁）。她为本案定下基调：</p>
+  <blockquote class="lead">
+    <div class="q-zh">「保护：这是共和国的首要职责。然而这些天，共和国惨痛地、集体地失职了。它没能保护那些本应被保护的人。」</div>
+    <div class="q-fr">«&nbsp;Protéger : tel est le premier devoir de la République. Pourtant, ces derniers jours, la République y a cruellement et collectivement failli. Elle n'a pas su protéger celles et ceux qui devaient l'être.&nbsp;»</div>
+    <div class="q-src">— <em>Yaël Braun-Pivet</em>，国民议会议长 · <a class="src-link" href="https://www.assemblee-nationale.fr/dyn/17/comptes-rendus/seance/session-ordinaire-de-2025-2026/premiere-seance-du-mardi-09-juin-2026" target="_blank" rel="noopener">官方会议记录 · 2026 年 6 月 9 日</a></div>
+  </blockquote>
+
+  <div class="party">
+    <div class="p-head">LFI <span class="p-tag">最强硬 · 要求辞职</span> <span class="annot" data-pop="bg-cathala">背景<sup>*</sup></span><div class="annot-text" id="bg-cathala"><strong>背景 · <em>Cathala</em></strong>（LFI，<em>Val-d'Oise</em> 选区）：<em>Cathala</em> 是法律委员会成员、并任「乱伦性暴力与保护性母亲」（<em>mères protectrices</em>：指为保护孩子免遭另一方性侵而举报，却在抚养权诉讼中反被指为操纵、甚至失去监护权的母亲）议会调查委员会成员，本就专攻儿童性暴力议题；其党友 <em>Paul Vannier</em> 与 Renaissance 议员 <em>Violette Spillebout</em> 共同领衔了 6 月 1 日通过的「校园暴力法」，<em>Cathala</em> 亦在 LFI 相关修正案上联署。</div></div>
+    <div class="p-body"><em>Gabrielle Cathala</em> 称此案「绝非失职」而是「法国司法寻常的运作方式」，直接要求 <em>Darmanin</em> 辞职；主张一部完整框架法、30 亿欧元预算、社保全额承担受害者治疗，并落实 <em>Ciivise</em> 的 82 项建议。她质问对失职的调查会否「一路追到您头上」。党内 <em>Panot</em> 等亦在院外要求其下台。</div>
+    <blockquote class="lead">
+      <div class="q-zh">「这桩案件毫无失职可言：73% 涉童性暴力的报案被撤案，其中 70% 没有任何侦查动作。它反映的是法国司法寻常可悲的运作方式。……您何时才会承担您那一份责任、递交辞呈？」</div>
+      <div class="q-fr">«&nbsp;Cette affaire n'a rien d'un dysfonctionnement : 73 % des plaintes pour violences sexuelles faites aux enfants sont classées sans suite et 70 % d'entre elles n'entraînent aucun acte d'investigation. Cette affaire reflète le fonctionnement tristement ordinaire de la justice française. … Quand assumerez-vous votre part de responsabilité en présentant votre démission ?&nbsp;»</div>
+      <div class="q-src">— <em>Gabrielle Cathala</em>（LFI-NFP）· <a class="src-link" href="https://www.assemblee-nationale.fr/dyn/17/comptes-rendus/seance/session-ordinaire-de-2025-2026/premiere-seance-du-mardi-09-juin-2026" target="_blank" rel="noopener">官方会议记录 · 2026 年 6 月 9 日</a></div>
+    </blockquote>
+    <p style="font-size:14.5px;margin-left:14px;border-left:2px solid var(--grey-line);padding-left:14px;"><b>政府回应（<em>Darmanin</em>）：</b>承认「我们失职了」、承诺彻查「系统性或个人」的责任（其完整立场见第 3 节）；但他「遗憾政治化」与「不尊重」，点名 LFI 党团主席周末即呼吁内阁成员辞职，并请 LFI「不要像去年那样推翻政府」，以便能提高预算。</p>
+  </div>
+
+  <div class="party">
+    <div class="p-head">SOC<span class="annot" data-pop="soc"><sup>*</sup></span><div class="annot-text" id="soc"><strong>SOC</strong>：国民议会「社会党」党团（<em>Socialistes et apparentés</em>）的官方登记名。注意与政党名 <strong>PS</strong>（<em>Parti socialiste</em>）区分——PS 是政党本身，SOC 是它在议会的「席位组」，可含非 PS 的关联议员。讲院内投票、提案、发言用 SOC；讲党派政治用 PS。</div><span class="p-tag">推完整法案立即上会</span> <span class="annot" data-pop="bg-stm">背景<sup>*</sup></span><div class="annot-text" id="bg-stm"><strong>背景 · 完整法案</strong>：发起人 <em>Thiébault-Martinez</em>（SOC，<em>Seine-et-Marne</em> 选区）。该「完整法案」法文为 <em>loi intégrale</em>（PPL n°2169，2025 年 12 月提交）。<em>Thiébault-Martinez</em> 是议会女性权利代表团（<em>délégation aux Droits des femmes</em>）成员，文本与约 60 个女权组织（含 <em>Fondation des femmes</em>）共同起草、跨 8 至 11 个党团联署——脊梁包括 <em>Balanant</em>（Dem）、<em>Garin</em>（EcoS）、<em>Lebon</em>（GDR）及 PS 党首 <em>Faure</em>、<em>Vallaud</em>；LFI 参与前期工作但未联署，RN 与 UDR 被排除在外。与平等部长 <em>Aurore Bergé</em> 的政府版框架法形成并行关系。</div></div>
+    <div class="p-body"><em>Céline Thiébault-Martinez</em> 发起的跨党派「完整法案」已工作约十个月，近 <b>80 条</b>、约 <b>145 名</b>议员联署、预算约 <b>27 亿欧元</b>，主张专门管辖、专职法官、受训警宪与卫生专家。她对「个人失误论」极为愤怒，在质询中要求 9 月特别会期立即审议该文本，并称政府当天午间宣布、要并入儿童保护法案的措施「不够」。</div>
+    <blockquote class="lead">
+      <div class="q-zh">「<em>Lyhanna</em> 的面孔，是一个我们国家再也不能忽视的现实……我请你们把这部完整法案的审议列入议程。」（院内）<br>「失职每周都有……如今只有 1% 的强奸者被定罪，每年有 16 万名儿童遭受暴力。」（院外）</div>
+      <div class="q-fr">«&nbsp;Le visage de Lyhanna, c'est celui d'une réalité que notre pays ne peut plus ignorer … je vous demande d'inscrire à l'ordre du jour la discussion de la proposition de loi … intégrale.&nbsp;» <span style="color:var(--grey)">(<a class="src-link" href="https://www.assemblee-nationale.fr/dyn/17/comptes-rendus/seance/session-ordinaire-de-2025-2026/premiere-seance-du-mardi-09-juin-2026" target="_blank" rel="noopener">官方会议记录 · 6/9</a>)</span><br>«&nbsp;… Aujourd'hui, nous avons 1 % des violeurs qui sont condamnés. Et 160 000 enfants victimes de violences chaque année.&nbsp;» <span style="color:var(--grey)">(《Le Parisien》6/8 · P. 6)</span></div>
+      <div class="q-src">— <em>Céline Thiébault-Martinez</em>（SOC）· <a class="src-link" href="https://www.assemblee-nationale.fr/dyn/17/comptes-rendus/seance/session-ordinaire-de-2025-2026/premiere-seance-du-mardi-09-juin-2026" target="_blank" rel="noopener">官方会议记录 2026 年 6 月 9 日</a> / 院外见《<em>Le Parisien</em>⁠》</div>
+    </blockquote>
+  </div>
+
+  <div class="party">
+    <div class="p-head">EcoS · GDR<span class="p-tag">批拖延 · 支持完整法</span> <span class="annot" data-pop="bg-garin">背景<sup>*</sup></span><div class="annot-text" id="bg-garin"><strong>背景 · <em>Garin</em>（EcoS，<em>Rhône</em> 选区）、<em>Girard</em></strong>：<em>Garin</em> 与 <em>Girard</em> 同为校园暴力议会调查委员会设立决议的联署人（与 <em>Vannier</em> 同案）；<em>Garin</em> 亦联署了 <em>Thiébault-Martinez</em> 的完整法案——EcoS、SOC、Dem、GDR 与 LFI 在儿童保护议题上同属一张协作网。</div></div>
+    <div class="p-body">生态党 <em>Marie-Charlotte Garin</em> 斥政府「你们不可能说不知道」，列举「成人与儿童的 MeToo、各份报告、各个调查委员会、<em>Ciivise</em> 的 82 项措施、由协会与议员推动的完整法案」，痛批「非得等一个孩子死了，你们才大发慈悲说一句『好，完整法案可以』」。6 月 10 日质询中，<em>Damien Girard</em> 以一线案例<span class="annot" data-pop="calliope">Calliope 项目<sup>*</sup></span><div class="annot-text" id="calliope"><strong><em>Calliope</em> 项目</strong>：<em>Alexis Danan</em> 协会运作的儿童性暴力受害者陪护项目，借鉴魁北克模式，获 <em>Ciivise</em>（独立调查委员会）推荐。<em>Girard</em> 用它说明:最脆弱受害者的陪护「不是国家创设的，而靠私人资助与协会」。</div>指出最脆弱受害者的陪护「不是国家创设的，而靠私人资助与协会」，并以 <em>Saône-et-Loire</em> 一宗 2025 年 6 月的强奸申诉佐证「司法系统的彻底瓦解」。<em>GDR</em> 的 <em>Karine Lebon</em> 等支持完整法与系统性的解读。</div>
+  </div>
+
+  <div class="party">
+    <div class="p-head">RN<span class="p-tag">Bardella 要求辞职</span></div>
+    <div class="p-body">党主席 <em>Jordan Bardella</em> 在 6 月 12 日称部长「出于荣誉与体面本应辞职」。<em>Marine Le Pen</em> 就此案表态，惋惜这是一桩「本可以（而且）本应避免」的失踪。（最早要求 <em>Darmanin</em> 辞职的是左翼与极右的 <em>Maréchal</em>、<em>Panot</em>、<em>Rousseau</em>、<em>Jouvet</em> 等，见第 3 节。）</div>
+    <blockquote class="lead">
+      <div class="q-zh">「（部长）出于荣誉与体面本应辞职。」</div>
+      <div class="q-fr">«&nbsp;(le ministre) aurait dû présenter sa démission, par honneur et par décence.&nbsp;»</div>
+      <div class="q-src">— <em>Jordan Bardella</em>（RN）·《<em>Le Parisien</em>》6/12 · P. 7</div>
+    </blockquote>
+    <p style="font-size:14.5px;margin-left:14px;border-left:2px solid var(--grey-line);padding-left:14px;"><b>政府回应（总理 <em>Lecornu</em>）：</b>承认这是需要「整体回应」<span class="annot" data-pop="q-integrale"><sup>*</sup></span><div class="annot-text" id="q-integrale"><strong>原文</strong>：«&nbsp;réponse intégrale&nbsp;»。</div>的「社会现象」<span class="annot" data-pop="q-phenomene"><sup>*</sup></span><div class="annot-text" id="q-phenomene"><strong>原文</strong>：«&nbsp;phénomène de société&nbsp;»。</div>，回应应超出单纯刑事层面；为方法（督察、清查、经国务委员会充实法案）与维持 <em>Darmanin</em> 辩护。</p>
+  </div>
+
+  <div class="party">
+    <div class="p-head">DR · LR<span class="p-tag">刑事从严 · 问责法官</span></div>
+    <div class="p-body"><em>Nathalie Colin-Oesterlé</em> 等强调刑事从严与司法链条责任；党首 <em>Retailleau</em> 把「司法官纪律法庭」与修宪推上议程（详见第 4 节）。</div>
+  </div>
+
+  <div class="party">
+    <div class="p-head">执政联盟 EPR · Dem · HOR<span class="p-tag">「系统性、社会性」· 促政府拿出方案</span> <span class="annot" data-pop="bg-cazeneuve">背景<sup>*</sup></span><div class="annot-text" id="bg-cazeneuve"><strong>背景 · <em>Cazeneuve</em> 与跨党协作</strong>：<em>Cazeneuve</em> 是 <em>Lyhanna</em> 案发地 <em>Gers</em> 的选区议员，故以本地视角发问。执政阵营在儿童保护上并非铁板一块对立左翼——Renaissance 议员 <em>Violette Spillebout</em> 即与 LFI 的 <em>Paul Vannier</em> 共同领衔了 6 月 1 日以 187 票对 0 通过的「校园暴力法」，两人共同担任该调查委员会报告人并组建跟进委员会。</div></div>
+    <div class="p-body"><em>Jean-René Cazeneuve</em>（EPR）援引 <em>Lyhanna</em> 父母的话，称问题「系统性而社会性」（用 <em>Fleurance</em> 市长的措辞），追问完整法何时审议、政府将推哪些结构性改革；<em>Dem</em> 的 <em>Perrine Goulet</em> 等就儿童保护提问。</div>
+    <blockquote class="lead">
+      <div class="q-zh">「『为你所经历的一切致歉』：这是 <em>Lyhanna</em> 父母的话……周日我们 6000 人参加白色游行，但请别搞错，部长先生，6800 万法国人都在等待答案。」</div>
+      <div class="q-fr">«&nbsp;"Pardon pour ce que tu as vécu" : ce sont les mots des parents de Lyhanna … Dimanche, nous étions 6 000 pour la marche blanche mais, ne vous y trompez pas, monsieur le ministre, 68 millions de Français attendent des réponses.&nbsp;»</div>
+      <div class="q-src">— <em>Jean-René Cazeneuve</em>（EPR）· <a class="src-link" href="https://www.assemblee-nationale.fr/dyn/17/comptes-rendus/seance/session-ordinaire-de-2025-2026/premiere-seance-du-mardi-09-juin-2026" target="_blank" rel="noopener">官方会议记录 · 2026 年 6 月 9 日</a></div>
+    </blockquote>
+    <p style="font-size:14.5px;margin-left:14px;border-left:2px solid var(--grey-line);padding-left:14px;"><b>政府回应（<em>Darmanin</em>）：</b>列举已向 <em>Gers</em> 与 <em>Auch</em> 检察院投入的增援，并提出三项立法主张（详见第 3 节）。随后议长 <em>Braun-Pivet</em> 宣布：已就 116 名议员联署的跨党派完整法案咨询国务委员会（EPR、SOC、EcoS、GDR 多席鼓掌）。</p>
+  </div>
+
+  <div class="card">
+    <div class="c-label">三份相关法案 · Trois textes</div>
+    <ul>
+      <li><b>校园暴力法</b>：<em>Spillebout</em>（Renaissance）与 <em>Vannier</em>（LFI）共同领衔，<strong>已于 6 月 1 日以 187 票对 0 通过</strong>，待参议院审议——是本案相关文本中较早通过国民议会的一部。</li>
+      <li><b>儿童保护项目法</b>：政府文本，已提请国务委员会充实（修改时效、加重刑罚），原定 7 月 15 日起议会审议。</li>
+      <li><b>反妇女与儿童暴力完整法案</b>（PPL <em>intégrale</em>，<a class="src-link" href="https://www.assemblee-nationale.fr/dyn/17/textes/l17b2169_proposition-loi.pdf" target="_blank" rel="noopener">n°2169</a>）：<em>Thiébault-Martinez</em> 发起的跨党派议员文本，尚未排期；左翼要求 9 月特别会期立即审议。</li>
+    </ul>
+    <div style="font-size:12.5px;color:var(--grey);margin-top:6px;">三者出处不同——第一份已通过、第二份出自政府、第三份出自议员且仍卡在议程外；本周争议的焦点之一即政府是否愿把完整法案排入议程。</div>
+  </div>
+
+  <h3 class="intertitre">是否互相利用叙事？<span class="fr">— récupération &amp; instrumentalisation</span></h3>
+  <p>各方都指对方在「消费」这桩命案，这一互控本身是公开、可溯源的。其结构是两套<strong>竞争性叙事</strong>各自归因，并互指对方借悲剧牟取政治利益。</p>
+
+  <div class="card">
+    <div class="c-label">两套竞争叙事 · Deux récits concurrents</div>
+    <ul>
+      <li><b>左翼／「经费不足」<span class="annot" data-pop="q-moyens"><sup>*</sup></span><div class="annot-text" id="q-moyens"><strong>原文</strong>：«&nbsp;manque de moyens&nbsp;»（经费／人手不足）。</div></b>：左翼一致谴责司法长期缺经费、缺人手，并要求 <em>Darmanin</em> 辞职。<em>Public Sénat</em> 概括为「左翼抨击司法经费不足，右翼则指摘法官的纵容」。</li>
+      <li><b>右翼／「法官纵容」<span class="annot" data-pop="q-laxisme"><sup>*</sup></span><div class="annot-text" id="q-laxisme"><strong>原文</strong>：«&nbsp;laxisme des magistrats&nbsp;»（司法官失之过宽）。</div></b>：右翼把矛头对准司法机构本身，<em>Retailleau</em> 重提其对司法「独立性」与「法团主义」的质疑、主张纪律法庭。</li>
+    </ul>
+    <div style="font-size:12.5px;color:var(--grey);margin-top:6px;">同一桩失职，被两端各自接进既有政纲——这正是「互相利用」指控的土壤。出处：<em>Public Sénat</em>、<em>The Conversation</em>、<em>Slate</em>（均 2026 年 6 月）。</div>
+  </div>
+
+  <div class="party">
+    <div class="p-head">政府 → 左翼：「政客式政治」<span class="p-tag">指对方政治化</span></div>
+    <div class="p-body">面对辞职要求，总理 <em>Lecornu</em> 与 <em>Darmanin</em> 反指左翼把悲剧政治化<span class="annot" data-pop="q-politicienne"><sup>*</sup></span><div class="annot-text" id="q-politicienne"><strong>原文</strong>：«&nbsp;politique politicienne&nbsp;»、«&nbsp;instrumentalisation&nbsp;»。</div>。<em>Lecornu</em>：「别向法国人撒谎、让他们以为这只是经费问题」<span class="annot" data-pop="q-mentez"><sup>*</sup></span><div class="annot-text" id="q-mentez"><strong>原文</strong>：«&nbsp;Ne mentez pas au peuple français en laissant à penser que ce n'est qu'une affaire de moyens&nbsp;»。</div>，并称发起辞职呼吁者「不过是政党领袖在搞政治」<span class="annot" data-pop="q-chefs"><sup>*</sup></span><div class="annot-text" id="q-chefs"><strong>原文</strong>：«&nbsp;Ce sont des chefs de parti, ils font de la politique&nbsp;»。</div>。<em>Darmanin</em>：「若你们以为靠搞政客式政治就能给办案人员、司法官、整个社会重新鼓劲，那是大错特错」。
+    <span style="display:block;font-size:12.5px;color:var(--grey);margin-top:6px;border-top:1px dotted var(--grey-line);padding-top:6px;">出处：<em>Europe 1</em>、<em>info.fr</em>（2026 年 6 月）。</span></div>
+  </div>
+
+  <div class="party">
+    <div class="p-head">左翼／分析者 → 政府：「卸责」<span class="p-tag">指对方转移责任</span></div>
+    <div class="p-body">反向指控是：政府借点名法官、宪兵来「卸责」<span class="annot" data-pop="q-defausser"><sup>*</sup></span><div class="annot-text" id="q-defausser"><strong>原文</strong>：«&nbsp;se défausser&nbsp;»（卸责、推卸）。</div>，掩盖行政部门在性暴力与家暴治理上的不作为。LFI 协调人 <em>Bompard</em>：「身居一部之长，就该担起责任来」<span class="annot" data-pop="q-assume"><sup>*</sup></span><div class="annot-text" id="q-assume"><strong>原文</strong>：«&nbsp;quand on est à la tête d'un ministère, on assume&nbsp;»。</div>，并指 <em>Darmanin</em> 试图把责任推给其他主体。<em>The Conversation</em> 与 <em>Slate</em> 的分析亦指出，司法部长的多次发声「首先似乎起到为自身不作为卸责的作用」<span class="annot" data-pop="q-fonction"><sup>*</sup></span><div class="annot-text" id="q-fonction"><strong>原文</strong>：«&nbsp;semblent d'abord avoir pour fonction de se défausser&nbsp;»。</div>。
+    <span style="display:block;font-size:12.5px;color:var(--grey);margin-top:6px;border-top:1px dotted var(--grey-line);padding-top:6px;">出处：<em>Orange</em>/<em>BFMTV</em>（<em>Bompard</em>，6/14）、<em>The Conversation</em>、<em>Slate</em>（6 月）。</span></div>
+  </div>
+
+  <div class="card" style="border-top-color:var(--grey);">
+    <div class="c-label">白色游行的「政治消费」之忌 · récupération</div>
+    <div style="font-size:14px;line-height:1.7;">另一重张力在街头：多场白色游行<span class="annot" data-pop="t-marches"><sup>*</sup></span><div class="annot-text" id="t-marches"><strong>marches blanches</strong>：「白色游行」，法国悼念受害者的非政治性沉默集会，参加者常着白衣。</div>明确不欢迎政界人物到场，正是出于对「政治消费」<span class="annot" data-pop="t-recup"><sup>*</sup></span><div class="annot-text" id="t-recup"><strong>récupération</strong>：「政治消费／趁势收割」，指政客借某一事件或运动为自身谋取政治利益。</div>的戒备——评论员 <em>Tabard</em> 即就此撰文，主张不应把政界排除、反而要「逼他们介入」（见第 5 节）。一桩本属司法／社会的悲剧，被各方争相纳入 2027 叙事，这种「争夺」本身已成为事件的一部分。</div>
+  </div>
+
+  <p style="font-size:13px;color:var(--grey);">小结：互控属实且双向——政府指左翼「政治化」，左翼与部分分析者指政府「卸责」；两端各执一套归因（经费 vs 纵容）。本页据多来源并列呈现，不对孰更「利用」作判断。</p>
+</section>
+
+<!-- ============ 3. 政府 ============ -->
+<section id="gouv">
+  <div class="sec-num">— 03 —</div>
+  <h2 class="sec">政府与部门回应<span class="fr">L'exécutif : Lecornu, Darmanin, Nuñez, Macron</span></h2>
+
+  <h3 class="intertitre">司法部长 <em>Gérald Darmanin</em><span class="fr">— excuses, inspection, et le doigt pointé vers les juges</span></h3>
+  <p>司法部长是这场危机的中心。他「以部长身份、代表司法」向 <em>Lyhanna</em> 家属、以及「合情合理地震惊、惊骇于此种失职的法国人」致歉，称司法「在历年针对嫌疑人的申诉跟进上失了职」、「我将承担一切后果」；下令各检察长在 7 月 14 日前清查约 7 万宗涉未成年性侵在押案卷，主张对未成年人犯罪不设时效、对连环强奸判无期、侦查行为限期 3 个月；但他坚称「在 <em>Lyhanna</em> 这桩具体悲剧里，既不需要新法律，也不需要更多经费」，并以「拘留应在查案开头而非结尾」把矛头指向法官。据《<em>Le Parisien</em>⁠》，据其了解是 <em>Macron</em> 本人要求 <em>Darmanin</em> 多上媒体、在这种时刻不要回避而要多发声，以显示行政当局仍有权威与掌控；总统私下的原话是「若不想让 RN 赢下次大选，正是此刻该展示这场危机中存在政治指挥」。这一周里部长几乎「无处不在」（TF1、LCI、<em>BFMTV</em>、议会质询），但其沟通刻意「滴水不漏」，从不回应 <em>Retailleau</em> 或 <em>Panot</em> 的政治攻击。</p>
+
+  <blockquote class="lead">
+    <div class="q-zh">「被这一失职吓坏了。」／「所发生的事完全不可接受……我会承担我的责任并作出制裁。这一失职暴露了我们糟糕的组织。」</div>
+    <div class="q-fr">«&nbsp;Terrifié par ce dysfonctionnement.&nbsp;» / «&nbsp;Ce qui s'est passé est tout à fait inacceptable … je prendrai mes responsabilités et des sanctions. Ce dysfonctionnement est révélateur de notre mauvaise organisation.&nbsp;»</div>
+    <div class="q-src">— <em>Gérald Darmanin</em>，司法部长 ·《<em>Le Parisien</em>⁠》6/5 · P. 3</div>
+  </blockquote>
+
+  <h3 class="intertitre">内政部长 <em>Laurent Nuñez</em><span class="fr">— « un échec », mais pas de démission</span></h3>
+  <p>在 <em>Darmanin</em> 于 LCI 表示制裁「可能」、最高可至撤职的两小时后，内政部长在 France 2《20 Heures》出面应对全国情绪。他锁定 <strong>2 月 14 日</strong> <em>Auch</em> 检察院与 <em>Lectoure</em> 宪兵队那次通话为转折点——「此后再无任何动作」——承认「显然存在失职」，但排除辞职。</p>
+
+  <blockquote class="lead">
+    <div class="q-zh">「这是一桩本可避免的悲剧……这宗案件是失败。」</div>
+    <div class="q-fr">«&nbsp;C'est un drame qui aurait pu être évité… Cette affaire est un échec.&nbsp;»</div>
+    <div class="q-src">— <em>Laurent Nuñez</em>，内政部长 ·《<em>Le Parisien</em>⁠》6/8 · P. 4</div>
+  </blockquote>
+
+  <h3 class="intertitre">总理 <em>Sébastien Lecornu</em><span class="fr">— le démineur qui « serre les rangs »</span></h3>
+  <p>履新满九个月的总理在案件正酣时过 40 岁生日。他「全力维护」<em>Darmanin</em>（一项 <em>Odoxa</em> 民调显示 <strong>59%</strong> 不希望部长辞职）。时间线上：6 月 3 日启动督察；4 日遗体发现后取消监狱行程；5 日召集多部长建立信息直报机制——在那场闭门会上，<em>Darmanin</em> 争取到公共账目部长 <em>Amiel</em> 同意本年度司法预算不削减；两日后 <em>Matignon</em> 宣布提请国务委员会充实儿童保护法案。他强调对这一「社会现象」的回应「必然超出一部法律」的框架。总统阵营内部并非全无杂音：有政府顾问私下担忧此案将持续主导政情，预言「终究需要一个示范性的『保险丝』。但是是谁呢？」（«&nbsp;il faudra un fusible pour l'exemple. Mais qui&nbsp;?&nbsp;»）；另有 EPR 议员点名批评 <em>Nuñez</em> 在这一阶段过于低调。</p>
+
+  <blockquote class="lead">
+    <div class="q-zh">「想在 2027 见法国人的人，不能搞两面派。现实会追上这些总统候选人。」</div>
+    <div class="q-fr">«&nbsp;Le réel va rattraper les candidats à la présidentielle.&nbsp;»</div>
+    <div class="q-src">— <em>Sébastien Lecornu</em>，总理 ·《<em>Le Parisien</em>⁠》6/14 · P. 5（专访）</div>
+  </blockquote>
+
+  <h3 class="intertitre">总统 <em>Emmanuel Macron</em><span class="fr">— « c'est inacceptable », sous pression sur les moyens</span></h3>
+  <p>身在境外（<em>Monténégro</em>）的总统罕见地回答记者关于本案的提问，称失职「不可接受」、呼吁汲取教训。数日后他在 <em>Robert-Debré</em> 医院作出某种「自责」，承认「在让施害者远离这件事上做得不够快、不够有力……对孩子我们做得少得多」。面对「缺乏经费」的指控，他提及自其执政以来司法预算增加了 <strong>40%</strong>——但家属律师 <em>Roujou de Boubée</em> 当面回敬「这才是问题的真正核心」（见第 5 节）。</p>
+
+  <blockquote class="lead">
+    <div class="q-zh">「存在一处失职，必须厘清漏洞，这不可接受！我们不会松手。」</div>
+    <div class="q-fr">«&nbsp;Il y a un dysfonctionnement, il faut clarifier les failles, c'est inacceptable ! On ne lâchera pas.&nbsp;»</div>
+    <div class="q-src">— <em>Emmanuel Macron</em>，总统 ·《<em>Le Parisien</em>⁠》6/6 · P. 2</div>
+  </blockquote>
+
+  <div class="card">
+    <div class="c-label">司法界的反弹 · La magistrature se défend</div>
+    <ul>
+      <li>检察长与检察官会议联合发声明声援被点名的 <em>Auch</em> 女检察官 <em>Clémence Meyer</em>，称在督察结论出来前不应提及个人责任。</li>
+      <li>多名检察官斥 <em>Darmanin</em> 不等调查结论即点名为「可耻」，指失职是「结构性而非个人」，警告「把法官交给民众泄愤」<span class="annot" data-pop="q-vindicte"><sup>*</sup></span><div class="annot-text" id="q-vindicte"><strong>原文</strong>：«&nbsp;livrer les juges à la vindicte populaire&nbsp;»。</div>很危险。</li>
+      <li>司法工会援引 <em>Cepej</em> 数据：法国每 10 万居民仅 <b>3 名</b>检察官，欧洲均值 <b>12.2</b>，垫底。</li>
+      <li>宪兵总司令 <em>Hubert Bonneau</em>：「不是钱的问题，是案子处理快慢的问题。」</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 4. 2027 候选人 ============ -->
+<section id="2027">
+  <div class="sec-num">— 04 —</div>
+  <h2 class="sec">2027 候选人如何用此议题叙事<span class="fr">Le drame entre dans la présidentielle 2027</span></h2>
+
+  <p>命案爆发当周即「离开社会新闻的范畴、具有全国规模」，所有已宣布或潜在的总统参选人都对失职表达愤怒——这「足以保证儿童保护议题将进入 2027 大选」。但他们各自把同一桩悲剧接进了不同的政纲叙事。<em>Le Figaro</em> 头版以 <em>Attal</em> 专访定调，把 2027 总统战的开端「框定在命案上」。</p>
+
+  <div class="party">
+    <div class="p-head"><em>Édouard Philippe</em><span class="p-tag">Horizons · 借鉴英国 Sarah's Law · 力挺 Darmanin</span></div>
+    <div class="p-body">一向寡言的前总理率先发声，主张每一起举报或申诉立即评估、必要时即时保护——「有风险时，该离开的不是孩子，而是被怀疑的成年人」；并提出借鉴英国 <span class="annot" data-pop="sarahslaw"><em>Sarah's Law</em><sup>*</sup></span><div class="annot-text" id="sarahslaw"><strong>Sarah's Law · Child Sex Offender Disclosure Scheme</strong>：英国的「儿童性犯罪者信息披露机制」。源于 2000 年 8 岁女童 <em>Sarah Payne</em> 被一名有前科的性犯罪者绑架杀害，经其母与小报多年推动，2008 年起在英格兰试行、2011 年全境推广。家长、监护人或第三方可就经常接触某名儿童的人向警方申请查询其有无儿童性犯罪前科；警方在「为保护儿童所必要」时可予披露。常与美国的 Megan's Law 并提。</div>。他全力支持 <em>Darmanin</em>，并轻刺 <em>Attal</em> 的「恐怖分子」类比是「对恋童癖犯罪是什么存在本质误解」。</div>
+    <blockquote class="lead">
+      <div class="q-zh">「当一个孩子的话被记录或被通报时，为什么国家的整条链条不立即进入警戒？」</div>
+      <div class="q-fr">«&nbsp;… quand la parole d'un enfant est recueillie ou signalée, pourquoi toute la chaîne de l'État ne se met-elle pas immédiatement en alerte ?&nbsp;»</div>
+      <div class="q-src">— <em>Édouard Philippe</em>，于 X ·《<em>Le Parisien</em>⁠》6/6 · P. 3</div>
+    </blockquote>
+  </div>
+
+  <div class="party">
+    <div class="p-head"><em>Gabriel Attal</em><span class="p-tag">Renaissance · 全面从严纲领</span></div>
+    <div class="p-body">在《<em>Le Figaro</em>⁠》专访中，<em>Attal</em> 开出一整套从严纲领，标志性主张是「将恋童犯的处置对标恐怖分子」（«&nbsp;aligner le traitement des pédocriminels sur celui des terroristes&nbsp;»）——设专司恋童犯罪的全国性检察机关与情报部门、仿「S 类档案」建统一的性侵害者档案。司法从严方面：对未成年人性犯罪不设时效 <span class="annot" data-pop="imprescr"><em>imprescriptibilité</em><sup>*</sup></span><div class="annot-text" id="imprescr"><strong>imprescriptibilité · 时效不可追溯</strong>：刑事追诉不受期限约束。法国仅对反人类罪设绝对不可时效化；针对未成年人的最严重性犯罪，自 2018 年起设「成年后 30 年」时效，但仍可追溯计算。本案各方（<em>Attal</em>、<em>Darmanin</em>）主张把对未成年人的性犯罪改为完全不设时效——理由是大量受害者因创伤性失忆而较晚才能陈述。</div>、强奸未成年人刑罚对齐谋杀（连环可判无期）、检察官对此类案件一律自动求处实刑、取消刑罚执行法官（JAP）与自动假释。机制改革方面：100 天内重写「卡夫卡式」的刑事诉讼法典、2027 年起招录 3000 名法官与书记官、全面数字化并引入 AI、改革最高司法委员会（纳入受害者协会代表、主席接受议会质询）、终结司法系统「别惹事」文化、以「Notre-Dame 法」加速建监狱床位、推广从业「品行证明」，并以公投兜底。他每起报案要求 48 小时内行动、3 个月内结案；但不主张此刻撤换 <em>Darmanin</em>。其叙事把本案接入「国家失职、总得有人付出代价」<span class="annot" data-pop="q-paie"><sup>*</sup></span><div class="annot-text" id="q-paie"><strong>原文</strong>：«&nbsp;il faudra bien que quelqu'un paie&nbsp;»。</div>的强硬框架。</div>
+    <blockquote class="lead">
+      <div class="q-zh">「被质疑的，是整条链条、整个儿童保护、以及我们赋予孩子话语的位置。」</div>
+      <div class="q-fr">«&nbsp;C'est toute la chaîne, toute la protection des enfants et la place que nous accordons à leur parole qui est remise en question.&nbsp;»</div>
+      <div class="q-src">— <em>Gabriel Attal</em>，于 X ·《<em>Le Parisien</em>⁠》6/6 · P. 3</div>
+    </blockquote>
+  </div>
+
+  <div class="party">
+    <div class="p-head"><em>Bruno Retailleau</em><span class="p-tag">LR · 司法官纪律法庭 · 修宪 + 公投</span></div>
+    <div class="p-body">前内政部长把矛头对准司法机构本身，主张设「司法官纪律法庭」，由抽签产生的公民与司法官、合格人士共同组成，可由公民、上级或司法部长提请；他认为现 <span class="annot" data-pop="csm"><em>CSM</em><sup>*</sup></span><div class="annot-text" id="csm"><strong>CSM · Conseil supérieur de la magistrature</strong>：司法官最高委员会，法国宪法机构，负责司法官的任命与纪律惩戒，旨在保障司法独立。下设两个合议庭（审判官庭、检察官庭），各由司法官与社会人士组成。其纪律职能是本案争议焦点：批评者（如 <em>Retailleau</em>、<em>Thréard</em>）称它「几乎从不」因专业过失制裁法官、过于法团化；辩护者则指近年纪律惩戒受理与决定数显著上升（2022 年决定数较往年均值翻倍有余），涉性侵的惩戒亦在增加。</div>「过于法团化、工会化」。他把这一改革与修宪 + 公投捆绑为 2027 政纲，并称这是结构性改革而非借命案做文章。</div>
+    <blockquote class="lead">
+      <div class="q-zh">「这套体制，已无法让我们回应社会超暴力的紧迫。我们身处一个没有人民的民主。存在一种阻碍。这才是不可再容忍的。」</div>
+      <div class="q-fr">«&nbsp;Le système ne nous permet plus de répondre à l'urgence de l'ultraviolence de la société. Nous sommes dans une démocratie sans peuple. Il y a un empêchement. C'est cela qui n'est plus tolérable.&nbsp;»</div>
+      <div class="q-src">— <em>Bruno Retailleau</em>（LR）·《<em>Le Figaro</em>⁠》6/8</div>
+    </blockquote>
+  </div>
+
+  <div class="party">
+    <div class="p-head"><em>Marine Le Pen</em> · <em>Jordan Bardella</em><span class="p-tag">RN · 「本可以（而且）本应避免」</span></div>
+    <div class="p-body">RN 把本案纳入其长年的「司法沉沦／治安失能」叙事。<em>Le Pen</em> 就此案表态，惋惜这是一桩「本可以（而且）本应避免」（une disparition qui «&nbsp;aurait pu (et) aurait dû être évitée&nbsp;»）的失踪；党主席 <em>Bardella</em> 则在 6 月 12 日要求 <em>Darmanin</em> 辞职。背景：<em>Le Pen</em> 自身的参选资格仍待 7 月 7 日巴黎上诉法院就「助理案」 <span class="annot" data-pop="assistants"><em>affaire des assistants parlementaires</em><sup>*</sup></span><div class="annot-text" id="assistants"><strong>Affaire des assistants parlementaires du FN/RN</strong>：欧洲议会经费挪用案。指控 RN（前身 FN）将欧洲议会拨付的议员助理经费用于支付为党工作的人员。2025 年 3 月一审判决认定 <em>Marine Le Pen</em> 等有罪，对其处即时执行的「不得参选」附加刑（<em>inéligibilité</em>），一度使其 2027 参选资格悬空；其上诉定于 2026 年 7 月 7 日在巴黎上诉法院审理——裁决结果将决定 2027 年 RN 由 <em>Le Pen</em> 还是 <em>Bardella</em> 出战。</div>作出裁决——「<em>Le Pen</em> 还是 <em>Bardella</em>」的悬念笼罩 RN。</div>
+  </div>
+
+  <div class="party">
+    <div class="p-head"><em>Jean-Luc Mélenchon</em> 及左翼<span class="p-tag">LFI · PS · Écolos · PP</span></div>
+    <div class="p-body"><em>Mélenchon</em>（LFI，已第四次宣布参选）于 <em>Saint-Denis</em> 启动竞选，主轴对准 RN／<em>Bardella</em>，命案非其集会重点但其党团在院内要求 <em>Darmanin</em> 辞职。<em>Hollande</em>（PS）、<em>Tondelier</em>（EcoS）、<em>Glucksmann</em>（PP）等亦对失职表达愤怒。左翼整体把议题接入「公共服务被削弱、司法缺经费」的框架，与 <em>Retailleau</em>「问责法官」的框架形成对照。</div>
+  </div>
+
+  <div class="card">
+    <div class="c-label">三套竞争方案 · Trois pistes（《Le Figaro》6/15 社论并列）</div>
+    <ul>
+      <li><em>Philippe</em>：借鉴英国 <b>Sarah's Law</b>、增加司法经费。</li>
+      <li><em>Attal</em>：将恋童犯比照恐怖分子（«&nbsp;aligner le traitement des pédocriminels sur celui des terroristes&nbsp;»）。</li>
+      <li><em>Retailleau</em>：设司法官<b>纪律法庭</b>（«&nbsp;cour disciplinaire de la magistrature&nbsp;»）、制裁法官。</li>
+    </ul>
+  </div>
+  <p style="font-size:13px;color:var(--grey);">三套方案分属不同参选人：「该离开的是成年人而非孩子」与借鉴 Sarah's Law 属 <em>Philippe</em>，「比照恐怖分子」属 <em>Attal</em>，「司法官纪律法庭」属 <em>Retailleau</em>。</p>
+</section>
+
+<!-- ============ 5. 评论员 ============ -->
+<section id="commentateurs">
+  <div class="sec-num">— 05 —</div>
+  <h2 class="sec">评论员如何评价<span class="fr">Éditoriaux et chroniques</span></h2>
+
+  <p>两报的署名评论沿两条主轴展开：一条追问<strong>法官的个人问责</strong>（<em>Le Figaro</em> 偏重），一条强调<strong>这是系统性、社会性失职、人人有责</strong>（兼及左右）。</p>
+
+  <div class="party">
+    <div class="p-head"><em>Yves Thréard</em> <span class="annot" data-pop="st-threard">立场<sup>*</sup></span><div class="annot-text" id="st-threard"><strong>立场 · Yves Thréard</strong>：《<em>Le Figaro</em>》副主编，右翼自由派评论的代表声音；本案中主张把矛头对准法官个人问责，呼应 <em>Retailleau</em> 的改革。</div><span class="p-tag">《Le Figaro》社论 · 问责法官</span></div>
+    <div class="p-body">社论《无法容忍的有罪不罚》以一连串类比主张法官应像其他专业人士一样为决策负责：外科医生手术失败、警察误用武器、建筑师楼房倒塌、会计师认证假账都可被追究，「为什么法官不必为其决定负责？」——并支持 <em>Retailleau</em> 重提此议题，断言 <em>CSM</em> 几乎从不以此为由制裁，「法团主义是确定无疑的」。</div>
+    <blockquote class="lead">
+      <div class="q-zh">「为什么一名法官不必为他的决定负责？」</div>
+      <div class="q-fr">«&nbsp;Pourquoi un magistrat n'aurait-il pas à répondre de ses décisions ?&nbsp;»</div>
+      <div class="q-src">— <em>Yves Thréard</em>，社论《<em>Le Figaro</em>⁠》6/8 · Une + Éditorial</div>
+    </blockquote>
+  </div>
+
+  <div class="party">
+    <div class="p-head"><em>Guillaume Tabard</em> <span class="annot" data-pop="st-tabard">立场<sup>*</sup></span><div class="annot-text" id="st-tabard"><strong>立场 · Guillaume Tabard</strong>：《<em>Le Figaro</em>》政治社论主笔，中右立场；坚持「个人责任不能被『系统失职』化解」，反对把一切归因于经费不足。</div><span class="p-tag">《Le Figaro》CONTRE-POINT · 反对「经费万能」</span></div>
+    <div class="p-body">评论《一种被要求交代的司法》主张不应把政界排除在白色游行之外、反而要「逼他们介入」；称把一切归于「系统失职」等于「为宿命辩护、给所有人开脱」——「是所有人的错，就是没有人有错」<span class="annot" data-pop="q-faute"><sup>*</sup></span><div class="annot-text" id="q-faute"><strong>原文</strong>：«&nbsp;Ce qui est la faute de tout le monde n'est la faute de personne&nbsp;»。</div>；并指「援引经费与人手不足是懒惰或虚伪的托辞」，因为对农民等群体执法时国家并不缺手段。他另有一篇评论指出，命案把 <em>Retailleau</em>／<em>Attal</em>／<em>Philippe</em> 三人「终于逼出了实质主张」（并引民调：74% 要问责、39% 要 <em>Darmanin</em> 辞职）。</div>
+  </div>
+
+  <div class="party">
+    <div class="p-head"><em>Ruth Elkrief</em><span class="p-tag">《Le Parisien》POINT DE VUE · 系统性·人人有责</span> <span class="annot" data-pop="st-elkrief">立场<sup>*</sup></span><div class="annot-text" id="st-elkrief"><strong>立场 · Ruth Elkrief</strong>：资深政治记者、电视评论员，中间偏自由派；本案中拒绝「替罪羊」逻辑，强调这是横跨多年、各层级的集体失职，主张以透明与效率重建信任。</div></div>
+    <div class="p-body">专栏《此案：人人有责》写这是「一种冷冽的暴怒、一种沉闷的愤怒」，认为多数人觉得司法部长有责却不要求其辞职，因为「悲剧太广太重，不能以一个替罪羊了事」；主导的是「所有人的无力感」。她引 <em>Elabe</em> 民调（对司法的不信任升 <b>10 点</b>至 <b>65%</b>；对宪兵的信任降 <b>9 点</b>但仍达 <b>73%</b>），并提出方向：重建透明与教育、与受害者以共情重连、以 AI 辅助司法（以爱沙尼亚为榜样）。</div>
+    <blockquote class="lead">
+      <div class="q-zh">「悲剧太广、太重，不能以一个替罪羊了事。」</div>
+      <div class="q-fr">«&nbsp;Le drame est bien trop ample et grave pour se contenter d'un bouc émissaire.&nbsp;»</div>
+      <div class="q-src">— <em>Ruth Elkrief</em>，专栏《<em>Le Parisien</em>⁠》6/14 · P. 14</div>
+    </blockquote>
+  </div>
+
+  <div class="party">
+    <div class="p-head"><em>Jean-Éric Schoettl</em><span class="p-tag">《Le Figaro》DÉBATS · 王权国家的失能</span> <span class="annot" data-pop="st-schoettl">立场<sup>*</sup></span><div class="annot-text" id="st-schoettl"><strong>立场 · Jean-Éric Schoettl</strong>：前宪法委员会秘书长，保守派法学家；从「主权国家失能」角度立论，把司法／治安失职视为国家不再履行核心职能的征兆。</div></div>
+    <div class="p-body">前宪法委员会秘书长撰文，将 <em>Lyhanna</em> 案与 PSG 夺冠骚乱并置，剖析司法／治安的失能与「国家不再保护民众」之感，落点在「王权国家」 <span class="annot" data-pop="regalien"><em>l'État régalien</em><sup>*</sup></span><div class="annot-text" id="regalien"><strong>l'État régalien · 主权国家职能</strong>：指国家最核心、不可让渡或外包的主权职能——司法、警察、国防、外交、货币。源自「regalien」（王权的）一词。法国政治辩论中，「国家在其王权职能上失能」是右翼与主权派的常用论据，意指国家连最基本的保护职责都履行不了。<em>Schoettl</em> 即以此立论。</div>的虚弱。</div>
+  </div>
+
+  <div class="party">
+    <div class="p-head">各报社论的共同落点<span class="p-tag">éditoriaux</span></div>
+    <div class="p-body">《<em>Le Figaro</em>⁠》6/15 社论「民主的症结」（<em>Laurence de Charette</em>）称这「不是社会新闻，而是沉默而灼痛的民主危机」的最新症状，并把三套方案并列供权衡。《<em>Le Parisien</em>⁠》多篇社论——<em>Charbonneau</em>「一方水土的孩子」与「怒火在涌动」、<em>Allezy</em>「又一桩，多余的一桩」、<em>Auguste</em>「关于信任的诘问」——则反复回到「愤怒、信任与效率」。家属律师 <em>Roujou de Boubée</em> 当面回敬 <em>Macron</em> 的一句，成为「经费派」最锋利的注脚。</div>
+    <blockquote class="lead">
+      <div class="q-zh">「通过我的口，这个失去孩子的家庭想审视真正的责任，即我们给司法的经费及其效率——因为是的，总统先生，这才是问题的真正核心。」</div>
+      <div class="q-fr">«&nbsp;… celles des moyens qu'on accorde à la justice et à leur efficacité car oui, monsieur le Président, c'est le vrai cœur du problème.&nbsp;»</div>
+      <div class="q-src">— <em>François Roujou de Boubée</em>，<em>Lyhanna</em> 家属律师 ·《<em>Le Parisien</em>⁠》6/10 · P. 6</div>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ============ 6. 时间线 ============ -->
+<section id="timeline">
+  <div class="sec-num">— 06 —</div>
+  <h2 class="sec">时间线<span class="fr">Chronologie</span></h2>
+
+  <div class="tl">
+    <div class="row"><div class="d">5 月 29 日</div><div class="e">周五 15 时，<em>Lyhanna</em> 在 <em>Fleurance</em> 放学后失踪；监控显示其登上 <em>Jérôme Barella</em> 的车。次日（30 日）<em>Barella</em> 被拘留。</div></div>
+    <div class="row"><div class="d">6 月 3 日</div><div class="e">国民议会政府质询出现「<em>Disparition de Lyhanna</em>」问题（<em>Taupiac</em>／<em>Nuñez</em>）。司法、内政、教育三部督察启动。</div></div>
+    <div class="row"><div class="d">6 月 4 日</div><div class="e">宪兵在 <em>Puycasquier</em> 废弃谷仓发现遗体；六天搜寻结束。</div></div>
+    <div class="row"><div class="d">6 月 5 日</div><div class="e"><em>Agen</em> 检察官经 DNA 确认遇害者为 <em>Lyhanna</em>。<em>Darmanin</em>「被这一失职吓坏了」；<em>Lecornu</em> 召集两部长。</div></div>
+    <div class="row"><div class="d">6 月 6–7 日</div><div class="e"><em>Macron</em>（境外）称「不可接受」；<em>Philippe</em>、<em>Attal</em> 先后于 X 发声；<em>Retailleau</em> 在《<em>Le Parisien</em>⁠》提「司法官纪律法庭」。<strong>7 日</strong> <em>Fleurance</em> 白色游行逾 <b>6000</b> 人。</div></div>
+    <div class="row"><div class="d">6 月 8 日</div><div class="e"><em>Nuñez</em>「这宗案件是失败」；检察官会议声援 <em>Auch</em> 检察官；跨党派记者会推动完整法案上会，议长出席力挺。</div></div>
+    <div class="row"><div class="d">6 月 9 日</div><div class="e">议会为 <em>Larigaudrie</em>、<em>Lyhanna</em>、<em>Noahm</em> 默哀（议长「共和国集体失职」）；八个「<em>Mort de Lyhanna</em>」质询；<em>Cathala</em>（LFI）当面要求 <em>Darmanin</em> 辞职，<em>Darmanin</em> 代司法机构道歉、主张时效/无期/3 个月限期；<em>Le Pen</em> 质询 <em>Lecornu</em>；议长宣布就 116 人联署的完整法案咨询国务委员会。家属对国家与部长提「重大过失」之诉。</div></div>
+    <div class="row"><div class="d">6 月 10 日</div><div class="e"><em>Lecornu</em> 试图平息众怒；质询涉「报案处理」与「受害者保护」；家属律师炮轰 <em>Macron</em>「这才是问题的真正核心」。</div></div>
+    <div class="row"><div class="d">6 月 11 日</div><div class="e">还原 <strong>2 月 14 日</strong>那场「本应改变一切」的问讯；<em>Macron</em> 在 <em>Robert-Debré</em> 医院承压、提司法预算增 40%；<em>Lecornu</em> 宣布将就「不予立案的说理义务」出台法令。</div></div>
+    <div class="row"><div class="d">6 月 12 日</div><div class="e"><em>Lyhanna</em> 在 <em>Fleurance</em> 下葬（蓝色棺木，最私密仪式）；<em>Barella</em> 家「代际暴力」浮出。</div></div>
+    <div class="row"><div class="d">6 月 13–14 日</div><div class="e"><em>Béziers</em> 重启对其父 <em>Joël Barella</em> 的旧案；<em>Le Pen</em>（6/14）改口称 <em>Darmanin</em>「本应辞职」；<em>Philippe</em> 专访主张 Sarah's Law；<em>Elkrief</em> 专栏「人人有责」。</div></div>
+    <div class="row"><div class="d">6 月 15 日</div><div class="e">《<em>Le Figaro</em>⁠》以「撼动法国司法的一周」框定 2027 战序；最高法院总检察长 <em>Rémy Heitz</em> 称「集体的失败」「没有经费就没有法律」，复查约 <b>7 万</b>宗积压报案已启动。</div></div>
+    <div class="row"><div class="d">6 月 19 日</div><div class="e"><span class="fr-inline">（本综述时段之外）</span>本案侦查失职的总督察报告预定公布日。</div></div>
+  </div>
+</section>
+
+<!-- ============ 版权 ============ -->
+<div class="copyright">
+  <div class="block-zh">
+    <p>本页为摘译·整理稿，综合自《<em>Le Parisien</em>⁠》（2026 年 6 月 4–14 日，N° 25436–25444 bis）、《<em>Le Figaro</em>⁠》（2026 年 6 月各期 Lyhanna 相关版面）及国民议会官方文件（会议记录与议员提案，assemblee-nationale.fr）。</p>
+    <p>原文参见：<em>kiosque.leparisien.fr</em> · <em>lefigaro.fr</em> · 翻至相应日期刊</p>
+    <p>原文著作权分别归 <em>Le Parisien libéré SAS</em> 与 <em>Société du Figaro SAS</em> 所有 — <em>Tous droits réservés</em></p>
+    <p>本页为摘译稿，仅供个人法语学习</p>
+    <p>禁止任何商业用途、复制转载、改编、上传或二次出版页面内容</p>
+    <p>如需引用，请以两报原报道为准并标明出处</p>
+    <p style="margin-top:8px;color:var(--ink-soft);">第 2 节「是否互相利用叙事」及部分时事核证另引以下公开来源（各条已就地标注）：<em>Europe 1</em>、<em>info.fr</em>、<em>Public Sénat</em>、<em>The Conversation</em>、<em>Slate</em>、<em>Orange</em>/<em>BFMTV</em>（均 2026 年 6 月）。著作权归各原媒体所有。</p>
+  </div>
+  <hr class="sep-line">
+  <div class="block-fr">
+    <p>Synthèse abrégée à usage personnel, d'après <em>Le Parisien</em> (4–14 juin 2026, N° 25436–25444 bis), <em>Le Figaro</em> (juin 2026, pages liées à l'affaire Lyhanna) et les documents officiels de l'Assemblée nationale (comptes rendus et propositions de loi, assemblee-nationale.fr).</p>
+    <p>Accès aux éditions originales : <em>kiosque.leparisien.fr</em> · <em>lefigaro.fr</em></p>
+    <p>Droits réservés à <em>Le Parisien libéré SAS</em> et à la <em>Société du Figaro SAS</em> — <em>Tous droits réservés</em></p>
+    <p>Traduction abrégée à usage personnel pour l'apprentissage du français.</p>
+    <p>Toute exploitation commerciale, reproduction, adaptation ou republication est interdite.</p>
+    <p>Pour citation, se référer aux articles originaux.</p>
+    <p style="margin-top:8px;color:var(--ink-soft);">La sous-section « récupération &amp; instrumentalisation » (§2) et certaines vérifications s'appuient en outre sur les sources publiques suivantes (citées au fil du texte) : <em>Europe 1</em>, <em>info.fr</em>, <em>Public Sénat</em>, <em>The Conversation</em>, <em>Slate</em>, <em>Orange</em>/<em>BFMTV</em> (juin 2026). Droits réservés à leurs éditeurs respectifs.</p>
+  </div>
+  <p class="footer-claude">Claude [Anthropic] 译·整理</p>
+</div>
+
+<a href="#" class="totop" id="backTop" aria-label="回到顶部">↑</a>
+
+<script>
+const notesToggle=document.getElementById('notesToggle'),
+      notesBtnLabel=document.getElementById('notesBtnLabel'), body=document.body;
+notesToggle.addEventListener('click',()=>{
+  body.classList.toggle('notes-open');
+  notesBtnLabel.textContent=body.classList.contains('notes-open')?'Hide notes':'Notes';
+});
+document.querySelectorAll('.annot').forEach(el=>{
+  el.addEventListener('click',e=>{
+    e.stopPropagation();
+    const id=el.dataset.pop; if(!id) return;
+    const t=document.getElementById(id); if(!t) return;
+    document.querySelectorAll('.annot-text.open').forEach(o=>{if(o!==t)o.classList.remove('open');});
+    t.classList.toggle('open');
+  });
+});
+document.addEventListener('click',e=>{
+  if(!e.target.closest('.annot')&&!e.target.closest('.annot-text')){
+    document.querySelectorAll('.annot-text.open').forEach(o=>o.classList.remove('open'));
+  }
+});
+const backTop=document.getElementById('backTop');
+window.addEventListener('scroll',()=>{backTop.classList.toggle('visible',window.scrollY>600);});
+backTop.addEventListener('click',e=>{e.preventDefault();window.scrollTo({top:0,behavior:'smooth'});});
+</script>
+</body>
+</html>
